@@ -13,12 +13,19 @@ app.get("/", (req, res) => {
 
 //GET NOTES - GET NOTES BY CATEGORY
 app.get("/notes", (req, res) => {
-  const { categorie } = req.query;
+  const { categorie, archived } = req.query;
   if (categorie) {
     const filteredNotes = notes.filter((note) =>
       note.categories.some((c) => c.toLowerCase() === categorie.toLowerCase())
     );
     return res.json(filteredNotes);
+  }
+
+  if (archived) {
+    const archivedNotes = notes.filter(
+      (note) => note.archived.toString() === archived
+    );
+    return res.json(archivedNotes);
   }
 
   res.json(notes);
@@ -67,6 +74,29 @@ app.patch("/notes/:id", (req, res) => {
   };
   notes[noteIndex] = updateNote;
   return res.json(updateNote);
+});
+
+//ARCHIVAR-DESARCHIVAR NOTE
+app.patch("/notes/archive/:id", (req, res) => {
+  const { id } = req.params;
+  const note = notes.find((note) => note.id === id);
+  if (note) {
+    note.archived = !note.archived
+    return res.json(note);
+  } else {
+    return res.status(404).json({ message: "no se ha encontrado la nota" });
+  }
+});
+
+//DELETE NOTE
+app.delete("/notes/:id", (req, res) => {
+  const { id } = req.params;
+  const noteIndex = notes.findIndex((note) => note.id === id);
+  if (noteIndex === -1) {
+    return res.status(404).json({ message: "no se ha encontrado la nota" });
+  }
+  const deletedNote = notes.splice(noteIndex, 1)[0];
+  return res.json(deletedNote);
 });
 
 app.use((req, res) => {

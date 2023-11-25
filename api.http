@@ -1,0 +1,39 @@
+### Obtener todas las notas
+GET http://localhost:3000/notes
+
+### Obtener nota por id
+GET http://localhost:3000/notes/1
+
+### Obtener nota por categorias
+GET http://localhost:3000/notes?categorie=LISTA
+
+### Obtener notas no/archivadas
+GET http://localhost:3000/notes?archived=true
+
+### Crear una nota
+POST http://localhost:3000/notes
+Content-Type: application/json
+
+{
+    "title": "Compras de supermercado",
+    "content": "Leche, huevos, pan",
+    "categories": ["Tareas", "Lista"]
+}
+
+### Archivar/Desarchivar una nota
+PATCH http://localhost:3000/notes/archive/0
+
+ 
+### Actualizar una nota
+PATCH http://localhost:3000/notes/1
+Content-Type: application/json
+
+{
+    "title": "MAIAMEEEEEE"
+}
+
+### Borrar una nota
+DELETE http://localhost:3000/notes/1
+
+
+
