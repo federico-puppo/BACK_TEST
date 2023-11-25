@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "You need to implement a simple web application that allows you to take notes, tag, and filter them. The development is divided into two phases:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/federico-puppo/BACK_TEST.git"
+  },
+  "author": "Federico Puppo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/federico-puppo/BACK_TEST/issues"
+  },
+  "homepage": "https://github.com/federico-puppo/BACK_TEST#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "zod": "^3.22.4"
+  }
+}
