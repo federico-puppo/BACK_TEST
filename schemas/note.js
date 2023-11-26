@@ -1,4 +1,4 @@
-const z = require("zod");
+import z from "zod";
 const noteSchema = z.object({
   title: z.string({
     invalid_type_error: "Note title must be a string",
@@ -33,15 +33,10 @@ const noteSchema = z.object({
     .default(""),
 });
 
-function validateNote(object) {
+export function validateNote(object) {
   return noteSchema.safeParse(object);
 }
 
-function validatePartialNote(object) {
+export function validatePartialNote(object) {
   return noteSchema.partial().safeParse(object);
 }
-
-module.exports = {
-  validateNote,
-  validatePartialNote,
-};

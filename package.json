@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "You need to implement a simple web application that allows you to take notes, tag, and filter them. The development is divided into two phases:",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
