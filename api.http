@@ -2,7 +2,7 @@
 GET http://localhost:3000/notes
 
 ### Obtener nota por id
-GET http://localhost:3000/notes/1
+GET http://localhost:3000/notes/6d16f035-8c89-11ee-b340-1c872c77e477
 
 ### Obtener nota por categorias
 GET http://localhost:3000/notes?categorie=LISTA

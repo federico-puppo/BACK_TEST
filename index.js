@@ -1,9 +1,12 @@
 import express, { json } from "express";
+import cors from "cors";
+
 import { notesRouter } from "./routes/notes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(json());
+app.use(cors());
 
 app.use("/notes", notesRouter);
 

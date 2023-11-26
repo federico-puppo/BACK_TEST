@@ -1,4 +1,9 @@
-import { NoteModel } from "../models/note.js";
+//import { NoteModel } from "../models/note.js";
+import { NoteModel } from "../models/mysql/note.js";
+//import NoteModel from "../models/mysql/note.js";
+
+// Now use NoteModel in your code...
+
 import { validateNote, validatePartialNote } from "../schemas/note.js";
 
 export class NotesController {
