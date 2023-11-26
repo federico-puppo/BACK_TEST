@@ -1,9 +1,9 @@
-import {connection} from "../../db/database.js";
+//import {sequelize} from "../../database/database.js";
 
 export class NoteModel {
   // Get all notes filtered by category and archived status
   static async getAll({ category, archived }) {
-    const [rows] = await connection.query(
+    const [rows] = await sequelize.query(
       "SELECT *, BIN_TO_UUID(id) id FROM notes;"
     );
     return rows;
@@ -12,7 +12,7 @@ export class NoteModel {
   // Other methods for getById, create, update, archive, delete...
   //GET BY ID
   static async getById({ id }) {
-    const [notes] = await connection.query(
+    const [notes] = await sequelize.query(
       `SELECT *, BIN_TO_UUID(id) id FROM notes WHERE id = UUID_TO_BIN(?);`,
       [id]
     );

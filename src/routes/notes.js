@@ -3,11 +3,14 @@ import { NotesController } from "../controllers/notes.js";
 
 export const notesRouter = Router();
 
-//GET NOTE (ALL-CATEGORY-ARCHIVED)
+//GET ALL NOTES
 notesRouter.get("/", NotesController.getAll);
 
 //GET NOTE BY ID
 notesRouter.get("/:id", NotesController.getById);
+
+//GET NOTE CATEGORIES
+notesRouter.get("/:id/categories", NotesController.getCategories);
 
 //CREATE NOTE
 notesRouter.post("/", NotesController.create);

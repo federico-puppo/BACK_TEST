@@ -25,7 +25,7 @@ const noteSchema = z.object({
       invalid_type_error: "Note created_at must be a string",
     })
     .default(""),
-  categories: z.array(z.enum(["Tareas", "Lista", "Personal"])),
+  categories: z.array(z.string()),
   user_id: z
     .string({
       invalid_type_error: "Note user_id must be a string",
