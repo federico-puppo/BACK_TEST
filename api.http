@@ -50,3 +50,39 @@ DELETE http://localhost:3000/notes/1
 
 
 
+###################################CATEGORIAS###################
+
+### Obtener todas las Categorias
+GET http://localhost:3000/category
+
+### Obtener Categoria por id
+GET http://localhost:3000/category/1
+
+
+### Crear Categorias
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "name": "Learning"
+}
+### Crear Categorias
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "name": "Chores"
+}
+### Crear Categorias
+POST http://localhost:3000/category
+Content-Type: application/json
+
+{
+    "name": "Body care"
+}
+
+
+### Borrar una Categoria
+DELETE http://localhost:3000/category/1
+
+

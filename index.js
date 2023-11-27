@@ -1,10 +1,11 @@
 import express, { json } from "express";
 import cors from "cors";
 import { notesRouter } from "./src/routes/notes.js";
+import { categoryRouter } from "./src/routes/category.js";
 import { sequelize } from "./src/database/database.js";
 import "./src/models/category.js";
 import "./src/models/note.js";
-import "./src/models/notes-categories.js";
+//import "./src/models/notes-categories.js";
 
 
 
@@ -18,6 +19,7 @@ try {
   app.use(cors());
 
   app.use("/notes", notesRouter);
+  app.use("/category", categoryRouter);
 
   app.get("/", (req, res) => {
     res.send("Hola mundo");
